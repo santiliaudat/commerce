@@ -103,10 +103,10 @@ export default function Cart() {
       </div>
       <div className="lg:col-span-4">
         <div className="flex-shrink-0 px-4 py-24 sm:px-6">
-          {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED && (
+          {process.env.COMMERCE_CHECKOUT_ENABLED && (
             <>
               {/* Shipping Address */}
-              {/* Only available with customCheckout set to true - Meaning that the provider does offer checkout functionality. */}
+              {/* Only available with checkout set to true - Meaning that the provider does offer checkout functionality. */}
               <div className="rounded-md border border-accents-2 px-6 py-6 mb-4 text-center flex items-center justify-center cursor-pointer hover:border-accents-4">
                 <div className="mr-5">
                   <MapPin />
@@ -120,7 +120,7 @@ export default function Cart() {
                 </div>
               </div>
               {/* Payment Method */}
-              {/* Only available with customCheckout set to true - Meaning that the provider does offer checkout functionality. */}
+              {/* Only available with checkout set to true - Meaning that the provider does offer checkout functionality. */}
               <div className="rounded-md border border-accents-2 px-6 py-6 mb-4 text-center flex items-center justify-center cursor-pointer hover:border-accents-4">
                 <div className="mr-5">
                   <CreditCard />
@@ -153,10 +153,17 @@ export default function Cart() {
             </div>
           </div>
           <div className="flex flex-row justify-end">
-            <div className="w-full lg:w-72">
+            {
+              // If CUSTOM CHECKOUT is enabled, then add your functionality here.
+            }
+            <div className="w-full">
               {isEmpty ? (
                 <Button href="/" Component="a" width="100%">
                   Continue Shopping
+                </Button>
+              ) : process.env.COMMERCE_CHECKOUT_ENABLED ? (
+                <Button Component="a" width="100%" disabled>
+                  Proceed to Pay
                 </Button>
               ) : (
                 <Button href="/checkout" Component="a" width="100%">

@@ -13,9 +13,6 @@
   },
   "sideEffects": false,
   "license": "MIT",
-  "engines": {
-    "node": "14.x"
-  },
   "dependencies": {
     "@reach/portal": "^0.11.2",
     "@vercel/fetch": "^6.1.0",
@@ -32,7 +29,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.random": "^3.2.0",
     "lodash.throttle": "^4.1.1",
-    "next": "^10.0.9-canary.5",
+    "next": "^10.2.0",
     "next-seo": "^4.11.0",
     "next-themes": "^0.0.4",
     "postcss": "^8.2.6",
