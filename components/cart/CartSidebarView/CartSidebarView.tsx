@@ -99,7 +99,7 @@ const CartSidebarView: FC = () => {
                 My Cart
               </h2>
             </Link>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-accents-3">
+            <ul className="py-4 space-y-6 pt-0 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-accents-3">
               {data!.lineItems.map((item: any) => (
                 <CartItem
                   key={item.id}

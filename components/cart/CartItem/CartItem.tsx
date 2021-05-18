@@ -90,12 +90,12 @@ const CartItem = ({
 
   return (
     <li
-      className={cn('flex flex-col', {
+      className={cn(s.root, {
         'opacity-50 pointer-events-none': removing,
       })}
       {...rest}
     >
-      <div className="flex flex-row space-x-8 py-8">
+      <div className="flex flex-row space-x-4 py-4">
         <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer">
           <Link href={`/product/${item.path}`}>
             <Image
@@ -112,7 +112,7 @@ const CartItem = ({
         <div className="flex-1 flex flex-col text-base">
           <Link href={`/product/${item.path}`}>
             <span
-              className="font-bold cursor-pointer leading-6"
+              className="font-medium cursor-pointer leading-6"
               onClick={() => closeSidebarIfPresent()}
             >
               {item.name}
@@ -132,18 +132,18 @@ const CartItem = ({
             </div>
           ) : null}
         </div>
-        <div className="flex flex-col justify-between space-y-2 text-base">
+        <div className="flex flex-col justify-between space-y-2 text-sm">
           <span>{price}</span>
         </div>
       </div>
       <div className="flex flex-row h-9">
         <button
-          className="flex justify-end focus:outline-none p-1 border-accents-4 border items-center"
+          className="flex justify-end focus:outline-none p-1 border-accents-3 border items-center justify-center w-12"
           onClick={handleRemove}
         >
-          <Cross width={22} height={22} />
+          <Cross width={20} height={20} />
         </button>
-        <label className="w-full border-accents-4 border ml-2">
+        <label className="w-full border-accents-3 border ml-2">
           <input
             type="number"
             max={99}
@@ -157,14 +157,14 @@ const CartItem = ({
         <button
           type="button"
           onClick={() => increaseQuantity(-1)}
-          className="border-accents-4 border bg-transparent p-1 border-l-0 focus:outline-none"
+          className="border-accents-3 border bg-transparent py-1 px-2 border-l-0 focus:outline-none hover:text-accents-9"
         >
           <Minus width={18} height={18} />
         </button>
         <button
           type="button"
           onClick={() => increaseQuantity(1)}
-          className="border-accents-4 border bg-transparent p-1 border-l-0 focus:outline-none"
+          className="border-accents-3 border bg-transparent py-1 px-2 border-l-0 focus:outline-none hover:text-accents-9"
         >
           <Plus width={18} height={18} />
         </button>

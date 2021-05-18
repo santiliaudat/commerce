@@ -1,3 +1,11 @@
+.root {
+  @apply flex flex-col py-4;
+}
+
+.root:first-child {
+  padding-top: 0;
+}
+
 .quantity {
   appearance: textfield;
   @apply w-8 border-accents-2 border mx-3 rounded text-center text-sm text-black;
