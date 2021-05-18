@@ -43,9 +43,12 @@ const CartSidebarView: FC = () => {
             <button
               onClick={handleClose}
               aria-label="Close panel"
-              className="hover:text-gray-500 transition ease-in-out duration-150"
+              className="hover:text-gray-500 transition ease-in-out duration-150 flex items-center focus:outline-none"
             >
               <Cross className="h-6 w-6" />
+              <span className="ml-2 text-accents-7 text-xs hover:text-gray-500">
+                Close
+              </span>
             </button>
           </div>
           <div className="space-y-1">
@@ -90,13 +93,13 @@ const CartSidebarView: FC = () => {
           <div className="px-4 sm:px-6 flex-1">
             <Link href="/cart">
               <h2
-                className="pt-1 pb-4 text-2xl leading-7 font-bold text-base tracking-wide cursor-pointer inline-block"
+                className="pt-1 pb-2 text-sm uppercase font-semibold tracking-wide cursor-pointer inline-block"
                 onClick={handleClose}
               >
                 My Cart
               </h2>
             </Link>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-t border-accents-3">
+            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-accents-3">
               {data!.lineItems.map((item: any) => (
                 <CartItem
                   key={item.id}
