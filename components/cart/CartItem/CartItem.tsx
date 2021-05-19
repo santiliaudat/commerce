@@ -121,13 +121,25 @@ const CartItem = ({
           {options && options.length > 0 ? (
             <div className="">
               {options.map((option: ItemOption, i: number) => (
-                <span
+                <div
                   key={`${item.id}-${option.name}`}
-                  className="text-sm font-semibold text-accents-7"
+                  className="text-sm font-semibold text-accents-7 inline-flex items-center justify-center"
                 >
-                  {option.value}
-                  {i === options.length - 1 ? '' : ', '}
-                </span>
+                  {option.name}
+                  {option.name === 'Color' ? (
+                    <span
+                      className="mx-2 rounded-full bg-transparent border w-5 h-5 p-1 text-accents-9 inline-flex items-center justify-center overflow-hidden"
+                      style={{
+                        backgroundColor: `${option.value}`,
+                      }}
+                    ></span>
+                  ) : (
+                    <span className="mx-2 rounded-full bg-transparent border h-5 p-1 text-accents-9 inline-flex items-center justify-center overflow-hidden">
+                      {option.value}
+                    </span>
+                  )}
+                  {i === options.length - 1 ? '' : <span className="mr-3" />}
+                </div>
               ))}
             </div>
           ) : null}
@@ -138,7 +150,7 @@ const CartItem = ({
       </div>
       <div className="flex flex-row h-9">
         <button
-          className="flex justify-end focus:outline-none p-1 border-accents-3 border items-center justify-center w-12"
+          className="flex focus:outline-none p-1 border-accents-3 border items-center justify-center w-12"
           onClick={handleRemove}
         >
           <Cross width={20} height={20} />
