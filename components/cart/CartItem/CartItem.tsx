@@ -149,10 +149,7 @@ const CartItem = ({
         </div>
       </div>
       <div className="flex flex-row h-9">
-        <button
-          className="flex focus:outline-none p-1 border-accents-3 border items-center justify-center w-12"
-          onClick={handleRemove}
-        >
+        <button className={s.actions} onClick={handleRemove}>
           <Cross width={20} height={20} />
         </button>
         <label className="w-full border-accents-3 border ml-2">
@@ -169,14 +166,16 @@ const CartItem = ({
         <button
           type="button"
           onClick={() => increaseQuantity(-1)}
-          className="border-accents-3 border bg-transparent py-1 px-2 border-l-0 focus:outline-none hover:text-accents-9"
+          className={s.actions}
+          style={{ marginLeft: '-1px' }}
         >
           <Minus width={18} height={18} />
         </button>
         <button
           type="button"
           onClick={() => increaseQuantity(1)}
-          className="border-accents-3 border bg-transparent py-1 px-2 border-l-0 focus:outline-none hover:text-accents-9"
+          className={cn(s.actions)}
+          style={{ marginLeft: '-1px' }}
         >
           <Plus width={18} height={18} />
         </button>
